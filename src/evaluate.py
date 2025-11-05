@@ -66,8 +66,7 @@ def evaluate_ensemble(test_loader, model_paths):
 
     # Initialize metrics
     test_metrics_tracker = MetricCollection({
-        'accuracy': MulticlassAccuracy(num_classes=args.num_classes),
-        'balanced_accuracy': MulticlassAccuracy(num_classes=args.num_classes, average='macro'),
+        'accuracy': MulticlassAccuracy(num_classes=args.num_classes, average='micro'),
         'precision': MulticlassPrecision(num_classes=args.num_classes, average='macro'),
         'recall': MulticlassRecall(num_classes=args.num_classes, average='macro'),
         'f1_macro': MulticlassF1Score(num_classes=args.num_classes, average='macro'),
@@ -121,12 +120,11 @@ def evaluate_ensemble(test_loader, model_paths):
     metrics = {
         "loss": test_loss / len(test_loader),
         "accuracy": test_metrics_computed['accuracy'].item(),
-        "balanced_accuracy": test_metrics_computed['balanced_accuracy'].item(),
         "precision": test_metrics_computed['precision'].item(),
         "recall": test_metrics_computed['recall'].item(),
         "macro_f1": test_metrics_computed['f1_macro'].item(),
-        "cohen_kappa": test_metrics_computed['cohen_kappa'].item(),
         "roc_auc_macro": roc_auc.compute().item(),
+        "cohen_kappa": test_metrics_computed['cohen_kappa'].item(),
         "per_label_f1": f1_per_class.compute().cpu().numpy(),
         "per_label_precision": precision_per_class.compute().cpu().numpy(),
         "per_label_recall": recall_per_class.compute().cpu().numpy(),
