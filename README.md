@@ -2,7 +2,7 @@
 Deep Learning project focused in classifying different KL grades of Osteoarthritis in the knee region. 
 
 ## Results
-Results were achieved using transfer learning on Resnet34.
+Results were achieved using transfer learning on Resnet50.
 
 ### Validation
 Using k-fold cross validation the following aggregated metrics were collected: (mean ± std)
