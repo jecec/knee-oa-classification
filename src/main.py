@@ -44,6 +44,7 @@ def main():
         for fold in range(starting_fold, args.folds):
             print(f"\n-- Training on Fold {fold + 1} --")
 
+            # TODO: Add oversampling to counteract imbalance of dataset and possibly class weights
             # 1. Load datasets
             train_set = pd.read_csv(Path(args.csv_dir, f'fold_{fold}_train.csv'))
             val_set = pd.read_csv(Path(args.csv_dir, f'fold_{fold}_val.csv'))

@@ -1,9 +1,5 @@
-import os
-from pathlib import Path
 import numpy as np
 import cv2
-import pandas as pd
-from sklearn.model_selection import StratifiedKFold
 from torch.utils.data import Dataset
 import torch
 from torchvision.transforms import v2

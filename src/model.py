@@ -22,6 +22,8 @@ class PreTrainedModel(nn.Module):
             weights = ResNet101_Weights.DEFAULT if pretrained else None
             self.model = resnet101(weights=weights)
 
+        # TODO: Implement layer freezing
+
         # Replace the final fully connected layer
         in_features = self.model.fc.in_features
         self.model.fc = nn.Identity()

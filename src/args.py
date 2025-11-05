@@ -29,7 +29,7 @@ def get_args():
     misc_group.add_argument('-num_classes', type=int, default=5)
     misc_group.add_argument('-seed', type=int, default=28)
     misc_group.add_argument('-device', type=str, default=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
-    misc_group.add_argument('-resume', type=bool, default=True, choices=[True, False])
+    misc_group.add_argument('-resume', type=bool, default=False, choices=[True, False])
     misc_group.add_argument('-print_rate', type=int, default=5)
     misc_group.add_argument('-train', type=bool, default=True)
     misc_group.add_argument('-evaluate', type=bool, default=True)
