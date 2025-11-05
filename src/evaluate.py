@@ -134,8 +134,7 @@ def evaluate_ensemble(test_loader, model_paths):
         "num_models": len(models),
     }
     plt.figure(figsize=(10, 8))
-    sns.heatmap(metrics["confusion_matrix"], annot=True, fmt='d', cmap=sns.color_palette("ch:s=-.2,r=.6", as_cmap=True),
-                xticklabels=['1','2','3','4','5'], yticklabels=['1','2','3','4','5'])
+    sns.heatmap(metrics["confusion_matrix"], annot=True, fmt='d', cmap=sns.color_palette("ch:s=-.2,r=.6", as_cmap=True))
     plt.xlabel('Predicted', fontsize=12)
     plt.ylabel('True', fontsize=12)
     plt.title(f'Confusion Matrix of Ensemble', fontsize=14)

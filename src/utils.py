@@ -96,8 +96,7 @@ def plot_training_metrics(history, cfmx=None, fold=None):
     # 3. Confusion Matrix
     if cfmx is not None:
         plt.figure(figsize=(10, 8))
-        sns.heatmap(cfmx, annot=True, fmt='d', cmap=sns.color_palette("ch:s=-.2,r=.6", as_cmap=True),
-                    xticklabels=['1','2','3','4','5'], yticklabels=['1','2','3','4','5'])
+        sns.heatmap(cfmx, annot=True, fmt='d', cmap=sns.color_palette("ch:s=-.2,r=.6", as_cmap=True))
         plt.xlabel('Predicted', fontsize=12)
         plt.ylabel('True', fontsize=12)
         plt.title(f'Confusion Matrix - Fold {fold+1}', fontsize=14)
